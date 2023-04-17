@@ -1,6 +1,9 @@
 package model;
 
 import java.time.*;
+/**
+ * This class creates Reports objects.
+ */
 
 public class Reports {
     private String appointmentType;

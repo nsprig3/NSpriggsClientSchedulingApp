@@ -1,4 +1,7 @@
 package model;
+/**
+ * This class creates Contacts objects.
+ */
 
 public class Contacts {
     public int contact_ID;

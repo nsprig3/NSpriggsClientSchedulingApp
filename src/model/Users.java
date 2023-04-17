@@ -1,6 +1,9 @@
 package model;
 
 import java.sql.*;
+/**
+ * This class creates Users objects.
+ */
 
 public class Users  {
     public int user_ID;

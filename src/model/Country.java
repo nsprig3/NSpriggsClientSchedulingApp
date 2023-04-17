@@ -1,4 +1,7 @@
 package model;
+/**
+ * This class creates Country objects.
+ */
 
 public class Country {
     private int country_id;

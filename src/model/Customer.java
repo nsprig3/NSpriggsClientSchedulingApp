@@ -4,6 +4,9 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.stage.*;
+/**
+ * This class creates Customer objects.
+ */
 
 public class Customer {
     private int customer_ID;

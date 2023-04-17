@@ -1,4 +1,7 @@
 package model;
+/**
+ * This class creates FLDivision objects.
+ */
 
 public class FLDivision {
     private int division_ID;

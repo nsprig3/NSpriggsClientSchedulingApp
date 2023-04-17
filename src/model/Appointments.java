@@ -4,6 +4,9 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.*;
 
+/**
+ * This class creates Appointments objects.
+ */
 public class Appointments {
 
     private int appointment_ID;

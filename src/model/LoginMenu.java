@@ -11,6 +11,10 @@ import java.net.*;
 import java.sql.*;
 import java.util.*;
 
+/**
+ * This is the main method and starting point for the application.
+ */
+
 
 public class LoginMenu extends Application implements Initializable {
 
