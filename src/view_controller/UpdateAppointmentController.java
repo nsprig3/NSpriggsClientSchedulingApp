@@ -257,8 +257,6 @@ public class UpdateAppointmentController implements Initializable {
             Timestamp startTimeDateStamp = Timestamp.valueOf(ldtStart);
             Timestamp endTimeDateStamp = Timestamp.valueOf(ldtEnd);
 
-            System.out.println(contactID);
-
             //compares appointment time to EST business hours
             Appointments a = new Appointments(appointmentID, title, description, location, type, startTimeDateStamp, endTimeDateStamp, customerID, userID, contactID);
 
@@ -276,7 +274,6 @@ public class UpdateAppointmentController implements Initializable {
 
                 //returns empty list if there are no appointments for this customer
                 if (validateCustomerAppointmentList.isEmpty()) {
-                    System.out.println("no appointments");
 
                     DBAppointments.updateAppointment(a);
 
@@ -289,7 +286,6 @@ public class UpdateAppointmentController implements Initializable {
                 }
                 //appointments exist for customer
                 else {
-                    System.out.println("appointments exist");
                     ObservableList<Appointments> overlappingAppointments = FXCollections.observableArrayList();
 
                     for (Appointments checkAppointment : validateCustomerAppointmentList) {
@@ -301,14 +297,12 @@ public class UpdateAppointmentController implements Initializable {
                                 || ((newAppointmentStart.isBefore(oldAppointmentEndTime)) && (newAppointmentStart.isAfter(oldAppointmentStartTime))) //NEW APPOINTMENT STARTS BETWEEN OLD APPOINTMENT START AND END
                                 || ((newAppointmentEnd.isAfter(oldAppointmentEndTime)) && (newAppointmentStart.isBefore(oldAppointmentStartTime)))  //OLD APPOINTMENT START AND END IS BETWEEN NEW START AND END
                                 || (newAppointmentStart.isEqual(oldAppointmentStartTime)) || (newAppointmentEnd).isEqual(oldAppointmentEndTime)) {
-                            System.out.println("overlapping appointment found");
                             overlappingAppointments.add(checkAppointment);
                         }
                     }
                     //empty list, no overlapping appointment found
                     if(overlappingAppointments.isEmpty()) {
                         DBAppointments.updateAppointment(a);
-                        System.out.println("No overlapping appointment found");
                         this.stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
                         this.scene = (Parent) FXMLLoader.load(this.getClass().getResource("ViewAppointments.fxml"));
                         this.stage.setScene(new Scene(this.scene));
@@ -321,7 +315,6 @@ public class UpdateAppointmentController implements Initializable {
                         for(Appointments appointment: overlappingAppointments) {
                             if (appointment.getAppointment_ID() == a.getAppointment_ID()) {
                                 sameAppointment = true;
-                                System.out.println("updating this appointment!");
                                 DBAppointments.updateAppointment(a);
                                 this.stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
                                 this.scene = (Parent) FXMLLoader.load(this.getClass().getResource("ViewAppointments.fxml"));
@@ -332,7 +325,6 @@ public class UpdateAppointmentController implements Initializable {
                         }
                         //different appointmentID means overlapping appointment
                         if(!sameAppointment){
-                           System.out.println ("overlapping appointment found :(");
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setTitle("Overlapping Appointment");
                             alert.setContentText("An appointment already exists for this customer at scheduled time.");

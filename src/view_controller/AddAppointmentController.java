@@ -290,7 +290,6 @@ public class AddAppointmentController implements Initializable {
 
                             //list is not empty, overlapping appointment found
                             if(!overlappingAppointments.isEmpty()){
-                                System.out.println("overlapping appointments");
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setTitle("Overlapping Appointment");
                             alert.setContentText("An appointment already exists for this customer at scheduled time.");

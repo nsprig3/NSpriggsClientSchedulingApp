@@ -15,7 +15,7 @@ public class timeZone {
     public static ZoneId userZoneId = ZoneId.systemDefault();
     public static ZoneId estZoneId = ZoneId.of("America/New_York");
     public static LocalTime businessStartEST = LocalTime.of(8,0);
-    public static LocalTime businessEndEST = LocalTime.of(20,0);
+    public static LocalTime businessEndEST = LocalTime.of(22,0);
     public static LocalDateTime userDateTime = LocalDateTime.now(userZoneId);
     public static ZonedDateTime estZonedDateTime = ZonedDateTime.of(userDateTime, utcZoneId);
 

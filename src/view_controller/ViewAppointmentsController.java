@@ -102,8 +102,7 @@ public class ViewAppointmentsController implements Initializable {
     void onActionDeleteAppointment(ActionEvent event) {
         ObservableList<Appointments> updatedAppointmentsList;
         Appointments a = ViewAppointmentsTableView.getSelectionModel().getSelectedItem();
-        int appointmentID = a.getAppointment_ID();
-        String appointmentType = a.getAppointmentType();
+
 
         if(a == null){
             //user did not select item to delete
@@ -114,6 +113,8 @@ public class ViewAppointmentsController implements Initializable {
 
         }
         else {
+            int appointmentID = a.getAppointment_ID();
+            String appointmentType = a.getAppointmentType();
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Delete Appointment?");
             Optional<ButtonType> result  = alert.showAndWait();

@@ -141,7 +141,6 @@ public class DBAppointments {
         ObservableList<Appointments> appointmentsThisWeek = FXCollections.observableArrayList();
         Timestamp currentDateTime = Timestamp.valueOf(LocalDateTime.now());
         LocalDate current = currentDateTime.toLocalDateTime().toLocalDate();
-        System.out.println("current: " + current);
 
         try {
             String sql = "SELECT * FROM appointments WHERE start >= ? AND end <= ?";
@@ -171,7 +170,6 @@ public class DBAppointments {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        System.out.println(appointmentsThisWeek);
         return appointmentsThisWeek;
     }
 

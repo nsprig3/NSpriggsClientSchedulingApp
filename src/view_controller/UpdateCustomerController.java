@@ -78,8 +78,6 @@ public class UpdateCustomerController implements Initializable {
         ObservableList<String> divisionCanada = FXCollections.observableArrayList();
 
 
-        //  System.out.println("starting division filter: " + countryName);
-
         //separate divisions by country
         for (FLDivision division : allDivisions) {
             if (division.getCountry_ID() == 1) {
