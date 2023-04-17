@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.ViewAppointmentsController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="1000.0">
+         <HBox.margin>
+            <Insets left="30.0" />
+         </HBox.margin>
+      </AnchorPane>
+      <VBox prefHeight="425.0" prefWidth="1000.0">
+         <children>
+            <Label text="Appointments">
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="450.0" prefWidth="950.0">
+               <children>
+                  <Pane prefHeight="300.0" prefWidth="940.0">
+                     <children>
+                        <TableView fx:id="ViewAppointmentsTableView" prefHeight="200.0" prefWidth="950.0">
+                          <columns>
+                            <TableColumn fx:id="ViewAppointmentsTblApptIDCol" prefWidth="50.0" text="Appt ID" />
+                            <TableColumn fx:id="ViewAppointmentsTblTitleCol" prefWidth="70.0" text="Title" />
+                              <TableColumn fx:id="ViewAppointmentsTblDescriptionCol" prefWidth="94.0" text="Description" />
+                              <TableColumn fx:id="ViewAppointmentsTblLocationCol" prefWidth="147.0" text="Location" />
+                              <TableColumn fx:id="ViewAppointmentsTblTypeCol" prefWidth="161.0" text="Type" />
+                              <TableColumn fx:id="ViewAppointmentsTblStartCol" prefWidth="102.0" text="Start Time" />
+                              <TableColumn fx:id="ViewAppointmentsTblEndCol" prefWidth="92.0" text="End Time" />
+                              <TableColumn fx:id="ViewAppointmentsTblCustIDCol" prefWidth="84.0" text="Customer ID" />
+                              <TableColumn fx:id="ViewAppointmentsTblUserIDCol" minWidth="0.0" prefWidth="65.0" text="User ID" />
+                              <TableColumn fx:id="ViewAppointmentsTblContactIDCol" minWidth="0.0" prefWidth="84.0" text="Contact ID" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="ViewAppointmentsAddAppointmentBtn" layoutX="560.0" layoutY="206.0" mnemonicParsing="false" onAction="#onActionNewAppointment" text="New" />
+                        <Button fx:id="ViewAppointmentsUpdateAppointmentBtn" layoutX="609.0" layoutY="206.0" mnemonicParsing="false" onAction="#onActionUpdateAppointment" text="Edit" />
+                        <Button fx:id="ViewAppointmentsDeleteAppointmentBtn" layoutX="673.0" layoutY="206.0" mnemonicParsing="false" onAction="#onActionDeleteAppointment" prefHeight="26.0" prefWidth="55.0" text="Delete" />
+                        <Button fx:id="ViewAppointmentsMainMenuBtn" layoutX="829.0" layoutY="257.0" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" text="Main Menu" />
+                        <RadioButton fx:id="ViewAppointmentsMonthRadio" layoutX="215.0" layoutY="240.0" mnemonicParsing="false" onAction="#viewByMonth" text="Month" />
+                        <RadioButton fx:id="ViewAppointmentsWeekRadio" layoutX="139.0" layoutY="240.0" mnemonicParsing="false" onAction="#viewByWeek" text="Week" />
+                        <Label layoutX="81.0" layoutY="240.0" text="View By:" />
+                        <RadioButton fx:id="ViewAppointmentsAllRadio" layoutX="279.0" layoutY="240.0" mnemonicParsing="false" onAction="#viewAllAppointments" text="All" />
+                        <Button fx:id="viewAppointmentsViewCustomersBtn" layoutX="801.0" layoutY="206.0" mnemonicParsing="false" onAction="#onActionViewCustomers" text="View Customers" />
+                     </children>
+                  </Pane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="30.0" right="30.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
